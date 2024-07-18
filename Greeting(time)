@@ -1,0 +1,36 @@
+import time
+timestamp = time.strftime('%H:%M:%S')
+t = timestamp
+timestamp = time.strftime('%H')
+h = int(timestamp)
+timestamp = time.strftime('%M')
+m = int(timestamp)
+timestamp = time.strftime('%S')
+s = int(timestamp)
+yes11 = h>=6,m>00,s>00
+yes22 = h<11,m<59,s<59
+yes1 = yes11 == yes22
+yes33 = h>=12,m>00,s>00
+yes44 = h<16,m<59,s<59
+yes3 = yes33 == yes44
+yes55 = h>=17,m>00,s>00
+yes66 = h<21,m<59,s<59
+yes5 = yes55 == yes66
+yes77 = h>=22,m>00,s>00
+yes88 = h<5,m<59,s<59
+yes7 = yes77 == yes88
+#print(yes1,'\n',yes3,'\n',yes5,'\n',yes7,)
+text = "Current Time"
+print(text.center(55),"\n",t.center(53),"\n")
+name = input("Your Full Name : ").title()
+
+if yes1 == True  :
+            print("Good Morning,",name)
+elif yes3  == True :
+            print("Good Afternoon,",name)
+elif yes5 == True  :
+            print("Good Evening,",name)
+elif yes7 ==True  :
+            print("Good Night,",name)
+else:
+            print("Refresh or Retry again..")
